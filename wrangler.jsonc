@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cloudnote",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-03-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cloudnote-db"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STORAGE"
+    }
+  ],
+  "vars": {
+    "PATH_MIN_LENGTH": "1",
+    "PATH_MAX_LENGTH": "20",
+    "RATE_LIMIT_PER_MINUTE": "60",
+    "SESSION_DURATION": "86400"
+  },
+  "secrets": {
+    "required": ["ADMIN_USERNAME", "ADMIN_PASSWORD", "JWT_SECRET"]
+  }
+}

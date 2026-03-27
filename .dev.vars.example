@@ -1,0 +1,6 @@
+# Copy this file to .dev.vars for local development only.
+# Do not commit your real .dev.vars file.
+
+ADMIN_USERNAME="admin"
+ADMIN_PASSWORD="change-me"
+JWT_SECRET="replace-with-a-long-random-secret"

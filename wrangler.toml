@@ -1,0 +1,35 @@
+name = "cloudnote-test"
+main = "src/index.ts"
+compatibility_date = "2025-09-06"
+compatibility_flags = ["nodejs_compat"]
+
+# 环境变量
+[vars]
+PATH_MIN_LENGTH = "1"
+PATH_MAX_LENGTH = "20"
+RATE_LIMIT_PER_MINUTE = "60"
+SESSION_DURATION = "86400"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "DB"
+database_name = "cloudnote-db-test"
+database_id = "6e395edf-33da-4654-b3ab-a805f40b24c4"
+
+# KV 命名空间绑定
+[[kv_namespaces]]
+binding = "CACHE"
+id = "eb778fdfbc8b4228b83ce54a5f1ab9e6"
+
+# R2 存储桶绑定
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "cloudnote-storage-test"
+
+# 开发环境配置
+[env.development]
+vars = { }
+
+# 生产环境配置
+[env.production]
+vars = { }
